@@ -48,11 +48,8 @@ Page 3 – Interactive calendar for scheduling and managing tasks
 
 ⚖️ Challenges & Limitations
 Budget Constraints: No funding available; used open-source tools
-
 Time Constraints: Limited time to deliver a full-featured application
-
 Security Concerns: Emphasis on privacy, potential vulnerability if passwords are weak
-
 Backup Needs: Highlighted risk of data loss without redundancy
 
 🧠 Conclusion
@@ -60,9 +57,7 @@ The project shows the feasibility and impact of using digital diaries in statist
 It encourages further exploration into scalable, secure, and user-friendly digital productivity tools for government or business applications.
 
 📂 Files & Outputs
-digital_diary.py – Python/Kivy source code
-users.sql – SQL script for login details
-feedback_form.csv – Post-usage employee feedback
+  In progress...
 
 Diagrams of user flow and screenshots of interface pages
 
