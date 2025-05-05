@@ -34,7 +34,7 @@ As machine learning evolves, K-means clustering and CNN have become central to s
 
 ---
 
-## 🛠Methodology
+## Methodology
 
 - **Programming Language**: MATLAB  
 - **Data**:
