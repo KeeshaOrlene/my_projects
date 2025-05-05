@@ -1,0 +1,72 @@
+>> % --- Improved Original K-means Clustering Code ---
+
+% Set number of clusters and observations
+M = 10; % Number of clusters
+A = M * 100; % Total observations (100 per class)
+Y = zeros(A, 3); % Store generated data [x, y, label]
+
+% Generate K random means
+pd = makedist('Uniform');
+Parameters = 30 * random(pd, [M, 2]); % K random cluster centers
+
+% Generate clustered data (bivariate normal)
+for i = 1:A
+    class = mod(i, M) + 1;
+    Y(i, 1:2) = mvnrnd(Parameters(class, 1:2), 10 * eye(2), 1);
+    Y(i, 3) = class; % Label (just for visualization)
+end
+
+% Plot original labeled data
+figure;
+gscatter(Y(:,1), Y(:,2), Y(:,3));
+title('Original Clustered Data with True Labels');
+
+% Remove class labels for unsupervised learning
+Y_B = zeros(A, 3);
+Y_B(:, 1:2) = Y(:, 1:2);
+
+% Initialize centroids
+K = M;
+Dist = zeros(A+2, K); % Matrix to store centroids and distances
+Dist(1:2, :) = 20 * random(pd, [2, K]); % Initial centroids
+
+% K-means iterations
+for t = 1:20
+    % Step 1: Assignment
+    for k = 3:(A+2)
+        min_dist = inf;
+        for j = 1:K
+            % Euclidean distance
+            Dist(k, j) = (Y_B(k-2,1) - Dist(1,j))^2 + (Y_B(k-2,2) - Dist(2,j))^2;
+            if Dist(k, j) < min_dist
+                min_dist = Dist(k, j);
+                Y_B(k-2, 3) = j; % Assign to closest cluster
+            end
+        end
+    end
+
+    % Step 2: Update centroids
+    Dist(1:2, :) = 0;
+    class_size = zeros(1, K);
+
+    for s = 3:(A+2)
+        class_id = Y_B(s-2, 3);
+        class_size(class_id) = class_size(class_id) + 1;
+        Dist(1, class_id) = Dist(1, class_id) + Y_B(s-2, 1);
+        Dist(2, class_id) = Dist(2, class_id) + Y_B(s-2, 2);
+    end
+
+    for j = 1:K
+        if class_size(j) > 0
+            Dist(1:2, j) = Dist(1:2, j) / class_size(j); % Update centroid
+        end
+    end
+end
+
+% Final clustered result plot
+figure;
+gscatter(Y_B(:,1), Y_B(:,2), Y_B(:,3));
+title('K-means Clustering Result');
+xlabel('X'); ylabel('Y');
+
+
