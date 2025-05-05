@@ -1,9 +1,7 @@
 # 🚇 Urban Transit Adoption Analysis
 
 📅 **Project Year:** 2024  
-👩🏽‍💻 **Author:** Michael DeLetter, C. Dustin Hildenbr, and Keesha Orlène Ngombo Mouelet  
-🤝 **Collaborators:**  
-
+👩🏽‍💻 **Authors:** Michael DeLetter, C. Dustin Hildenbr, and Keesha Orlène Ngombo Mouelet  
 ---
 
 ## 📌 Overview
