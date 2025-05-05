@@ -105,9 +105,7 @@ Both techniques have their merit, but for image classification:
 
 - `KMeans_code.m` – MATLAB script for K-means clustering
 - `CNN_code.m` – MATLAB script for CNN image classification
-- `A_COMPARISON_REPORT.pdf` – Full research document
-- Diagrams
-
+- `images`
 ---
 
 ## 📎 References
