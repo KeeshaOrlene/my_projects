@@ -68,7 +68,20 @@ This study aims to determine which factors most significantly influence public t
 
 ---
 
-## Conclusion
+## 🔗 References
+
+- [National Transit Database (NTD)](https://www.transit.dot.gov/ntd)  
+- Cervero & Guerra – *Urban Densities and Transit*  
+- Mattson – *Transit and Household Expenditures*  
+- Bertaud & Richardson – *Transit and Density: U.S. vs. Europe*  
+
+---
+
+**Conclusion:**  
+Transit adoption is not just about the number of people living in a city—it's about **how much a city invests** in making public transit viable.
+
+
+
 
  **Key Finding:** Funding drives Transit ridership more than urban density.  
 The project encourages planners and officials to invest in **funding structures**, not just infrastructure or spatial form.
