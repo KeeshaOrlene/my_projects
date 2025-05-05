@@ -1,10 +1,9 @@
-# 🚇 Urban Transit Adoption Analysis
-
-📅 **Project Year:** 2024  
-👩🏽‍💻 **Authors:** Michael DeLetter, C. Dustin Hildenbr, and Keesha Orlène Ngombo Mouelet  
+#   Urban Transit Adoption Analysis
+📅 Project Year: 2024  
+👩🏽‍💻 Authors: Michael DeLetter, C. Dustin Hildenbr, and Keesha Orlène Ngombo Mouelet  
 ---
 
-## 📌 Overview
+## Overview
 
 This project investigates the drivers behind urban transit ridership in 120 U.S. metropolitan areas using data from the 2019 National Transit Database (NTD).
 
@@ -12,7 +11,7 @@ By modeling transit miles per capita, the study questions the long-standing beli
 
 ---
 
-## 🔍 Background & Significance
+## Background & Significance
 
 While cities like New York are often cited as transit successes due to their density, this project shows that investment per capita plays a more crucial role than density alone.
 
@@ -20,24 +19,24 @@ The findings offer valuable insights for policymakers aiming to build efficient 
 
 ---
 
-## 📊 Key Variables Explored
+## Key Variables Explored
 
-- 🧍 Population Density  
-- 💸 Transit Expenses Per Capita  
-- 🏛️ Percent of Public Funding  
-- 🚈 Rail Availability (Yes/No)  
-- 🚍 Fleet Size per 1,000 Residents  
-- 🌎 Time Zone (Regional Influence)
-
----
-
-## 💡 Objective
-
-The purpose of this study is to determine which factors most significantly influence public transit ridership and construct an interpretable, reduced linear model to support evidence-based transit policies.
+- Population Density  
+- Transit Expenses Per Capita  
+- Percent of Public Funding  
+- Rail Availability (Yes/No)  
+- Fleet Size per 1,000 Residents  
+- Time Zone (Regional Influence)
 
 ---
 
-## 🛠️ Methodology
+## Objective
+
+This study aims to determine which factors most significantly influence public transit ridership and construct an interpretable, reduced linear model to support evidence-based transit policies.
+
+---
+
+## Methodology
 
 **Data Source:** 2019 National Transit Database (NTD)  
 **Tech Stack:** R (`lm`, `car`, `MASS`, `alr3`), Excel  
@@ -51,16 +50,16 @@ The purpose of this study is to determine which factors most significantly influ
 
 ---
 
-## 📈 Final Model Summary
+## Final Model Summary
 
-- ✅ **Retained Predictors:** `expenses_per_capita`, `percent_public_money`  
-- 📉 **Excluded:** `density`, `rail`, `time_zone` due to insignificance  
-- 📊 **Adjusted R²:** 0.8878  
-- 🔎 Insight: **More funding per person = more transit miles ridden**
+- **Retained Predictors:** `expenses_per_capita`, `percent_public_money`  
+- **Excluded:** `density`, `rail`, `time_zone` due to insignificance  
+- **Adjusted R²:** 0.8878  
+- Insight: **More funding per person = more transit miles ridden**
 
 ---
 
-## ⚖️ Challenges
+## Challenges
 
 - Limited to cities with >300K population  
 - Causality cannot be proven (observational data)  
@@ -69,9 +68,9 @@ The purpose of this study is to determine which factors most significantly influ
 
 ---
 
-## 🧠 Conclusion
+## Conclusion
 
-📢 **Key Finding:** Transit ridership is driven more by funding than urban density.  
+ **Key Finding:** Funding drives Transit ridership more than urban density.  
 The project encourages planners and officials to invest in **funding structures**, not just infrastructure or spatial form.
 
 ---
