@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 This project presents a comparative analysis of two fundamental machine learning techniques—K-means clustering and Convolutional Neural Networks (CNN)—with a focus on their application in image recognition.
 
@@ -14,7 +14,7 @@ The aim was to explore the strengths and limitations of each method in tasks lik
 
 ---
 
-## 🔍 Background & Significance
+## Background & Significance
 
 As machine learning evolves, K-means clustering and CNN have become central to solving image-based classification and segmentation tasks. This project aims to:
 
@@ -24,7 +24,7 @@ As machine learning evolves, K-means clustering and CNN have become central to s
 
 ---
 
-## 💡 Research Objectives
+## Research Objectives
 
 - Understand how image recognition is applied in everyday life (e.g., commerce, healthcare, digital imaging).
 - Explore what **K-means clustering** is and how to build the algorithm in MATLAB.
@@ -34,7 +34,7 @@ As machine learning evolves, K-means clustering and CNN have become central to s
 
 ---
 
-## 🛠️ Methodology
+## 🛠Methodology
 
 - **Programming Language**: MATLAB  
 - **Data**:
@@ -44,11 +44,11 @@ As machine learning evolves, K-means clustering and CNN have become central to s
   - **K-means**: Initialization → Cluster Assignment → Centroid Update
   - **CNN**: Input → Convolutional Layer → ReLU → Max Pooling → Fully Connected → Output
 
-📌 *Note*: Both algorithms were coded from scratch using MATLAB, including visualization, training loops, and performance checks.
+*Note*: Both algorithms were coded from scratch using MATLAB, including visualization, training loops, and performance checks.
 
 ---
 
-## 📊 Results
+## Results
 
 - **K-Means Clustering**:
   - Data was segmented cleanly into 10 groups.
@@ -62,16 +62,16 @@ As machine learning evolves, K-means clustering and CNN have become central to s
 
 ---
 
-## 🔁 Diagrams and Flowcharts
+## Diagrams and Flowcharts
 
 Visual aids used in the original presentation and report include:
 
-- 📈 **K-means Pipeline**:
+-  **K-means Pipeline**:
   - Initialization (random centroids)
   - Cluster assignment via Euclidean distance
   - Updating centroids based on the mean
 
-- 🧠 **CNN Architecture**:
+- **CNN Architecture**:
   - Input → Convolutional Layer → ReLU → Max Pooling → Fully Connected → Prediction
   - Gradient descent and backpropagation are used to optimize weights
 
@@ -79,7 +79,7 @@ Visual aids used in the original presentation and report include:
 
 ---
 
-## 🔬 Key Differences
+## Key Differences
 
 | Feature              | K-Means Clustering     | Convolutional Neural Networks |
 |---------------------|------------------------|-------------------------------|
@@ -90,25 +90,25 @@ Visual aids used in the original presentation and report include:
 
 ---
 
-## 🧠 Conclusion
+## Conclusion
 
 Both techniques have their merit, but for image classification:
 
 - **CNN** is more accurate and adaptable.
 - **K-means** is faster and simpler, but limited in prediction and scalability.
 
-📌 *Recommendation*: Further explore unsupervised learning techniques that can handle complex, high-dimensional image data with the accuracy and flexibility of CNNs.
+*Recommendation*: Further explore unsupervised learning techniques that can handle complex, high-dimensional image data with the accuracy and flexibility of CNNs.
 
 ---
 
-## 📂 Files Included
+## Files Included
 
 - `KMeans_code.m` – MATLAB script for K-means clustering
 - `CNN_code.m` – MATLAB script for CNN image classification
 - `images`
 ---
 
-## 📎 References
+## References
 
 - Bishop, C. (2006). *Pattern Recognition and Machine Learning*  
 - Towards Data Science (2018). *Applications of Deep Learning*  
