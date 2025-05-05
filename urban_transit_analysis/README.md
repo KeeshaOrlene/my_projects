@@ -1,63 +1,80 @@
-🗂️ Integrated Digital Diary for Statistical Use
-📅 Project Year: 2019
-👩🏽‍💻 Author: Keesha Orlène Ngombo Mouelet
-📚 Supervisor: Mr. W.M. Manamela
+# 🚇 Urban Transit Adoption Analysis
 
-📌 Overview
-This project presents the development of a digital diary system tailored for use by Statistics South Africa employees. The aim was to design and implement a user-friendly and secure application to improve organization, task tracking, and time management within a statistical agency setting.
+📅 **Project Year:** 2024  
+👩🏽‍💻 **Author:** Michael DeLetter, C. Dustin Hildenbr, and Keesha Orlène Ngombo Mouelet  
+🤝 **Collaborators:**  
 
-🔍 Background & Significance
-Transitioning from manual to digital task management systems is crucial in the context of the fourth industrial revolution. This project demonstrates how digital diaries enhance efficiency, reduce stress, and support goal-oriented task execution.
+---
 
-📊 Key Drivers:
+## 📌 Overview
 
--Boosting productivity and minimizing errors
--Providing a secure, structured, and shareable environment
--Meeting organizational needs for privacy and task tracking
+This project investigates the drivers behind urban transit ridership in 120 U.S. metropolitan areas using data from the 2019 National Transit Database (NTD).
 
-💡 Research Objectives
-Highlight the importance of company work diaries
-Advocate for digital over manual diaries
-Develop a basic diary app using Python and Kivy
-Integrate secure login features using SQL
-Enable task editing, reminders, and calendar visualization.
+By modeling transit miles per capita, the study questions the long-standing belief that population density is the main determinant of ridership, revealing that per capita funding and investment are much stronger predictors of transit adoption.
 
-🛠️ Methodology
-Technologies Used:
-Python: Core language for application logic
-Kivy: UI and front-end development
-SQL: User authentication and data storage
-Excel: Random sampling of user testers
-Google Forms: Post-test survey for feedback
-Development Stages:
-Identifying organizational needs
-Planning with appropriate tools and technologies
-Application development (3 pages: Welcome, Login, Calendar)
-Testing with selected staff members
-Final feedback and presentation
+---
 
-📊 Expected Features
-Page 1 – Welcoming screen with organization branding
-Page 2 – Login page with secure access
-Page 3 – Interactive calendar for scheduling and managing tasks
+## 🔍 Background & Significance
 
-📌 Note: The application was coded from scratch and intended for internal use at Statistics South Africa.
+While cities like New York are often cited as transit successes due to their density, this project shows that investment per capita plays a more crucial role than density alone.
 
-🔁 Flow Diagram
-1️⃣ Login → 2️⃣ Calendar View → 3️⃣ Add/Edit Tasks → 4️⃣ Logout
+The findings offer valuable insights for policymakers aiming to build efficient transit systems, especially in cities where density is limited but funding opportunities exist.
 
-⚖️ Challenges & Limitations
-Budget Constraints: No funding available; used open-source tools
-Time Constraints: Limited time to deliver a full-featured application
-Security Concerns: Emphasis on privacy, potential vulnerability if passwords are weak
-Backup Needs: Highlighted risk of data loss without redundancy
+---
 
-🧠 Conclusion
-The project shows the feasibility and impact of using digital diaries in statistical and organizational settings. 
-It encourages further exploration into scalable, secure, and user-friendly digital productivity tools for government or business applications.
+## 📊 Key Variables Explored
 
-📂 Files & Outputs
-  In progress...
+- 🧍 Population Density  
+- 💸 Transit Expenses Per Capita  
+- 🏛️ Percent of Public Funding  
+- 🚈 Rail Availability (Yes/No)  
+- 🚍 Fleet Size per 1,000 Residents  
+- 🌎 Time Zone (Regional Influence)
 
-Diagrams of user flow and screenshots of interface pages
+---
+
+## 💡 Objective
+
+The purpose of this study is to determine which factors most significantly influence public transit ridership and construct an interpretable, reduced linear model to support evidence-based transit policies.
+
+---
+
+## 🛠️ Methodology
+
+**Data Source:** 2019 National Transit Database (NTD)  
+**Tech Stack:** R (`lm`, `car`, `MASS`, `alr3`), Excel  
+**Steps:**
+1. Data aggregation by Urbanized Area (UZA)
+2. Feature engineering (per capita, density, categorical rail feature)
+3. Box-Cox transformation for normality
+4. Linear regression modeling
+5. Model selection via `stepAIC`
+6. Diagnostic analysis (residual plots, VIF)
+
+---
+
+## 📈 Final Model Summary
+
+- ✅ **Retained Predictors:** `expenses_per_capita`, `percent_public_money`  
+- 📉 **Excluded:** `density`, `rail`, `time_zone` due to insignificance  
+- 📊 **Adjusted R²:** 0.8878  
+- 🔎 Insight: **More funding per person = more transit miles ridden**
+
+---
+
+## ⚖️ Challenges
+
+- Limited to cities with >300K population  
+- Causality cannot be proven (observational data)  
+- Density may still matter outside NTD Urbanized Areas  
+- Political/regional funding patterns not directly tested
+
+---
+
+## 🧠 Conclusion
+
+📢 **Key Finding:** Transit ridership is driven more by funding than urban density.  
+The project encourages planners and officials to invest in **funding structures**, not just infrastructure or spatial form.
+
+---
 
