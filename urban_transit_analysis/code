@@ -1,0 +1,58 @@
+##### set a home directory 
+setwd("C:/Users/mdele/OneDrive - Cleveland State University/STA567/Project")
+library("MASS")
+library("car")
+
+##### Load the data
+
+tdata = read.csv("2019_Transit_Data.csv")
+View(tdata)
+sapply(tdata, "class")
+tdata$rail = as.factor(tdata$rail)
+tdata$time_zone = as.factor(tdata$time_zone)
+sapply(tdata, "class")
+plot(tdata)
+
+model1 = lm(miles_per_capita ~ time_zone + density + expenses_per_capita + 
+              rail + percent_public_money + vehicles_per_thousand, tdata)
+
+vif(model1)
+
+tdata_no_categoricals = read.csv("2019_Transit_Data_no_categoricals.csv")
+plot(tdata_no_categoricals)
+
+tdata_no_categoricals = tdata_no_categoricals[-c(4,5)]
+View(tdata_no_categoricals)
+
+install.packages('remotes')
+remotes::install_github("cran/alr3")
+library(alr3)
+tdata_boxcox = bctrans(tdata_no_categoricals)
+powerTransform(tdata_no_categoricals)
+
+
+#TRANSFORM VARIABLES
+tdata$density = tdata$density^-0.63437944
+tdata$miles_per_capita = tdata$miles_per_capita^0.02303684
+tdata$expenses_per_capita = tdata$expenses_per_capita^0.01863087
+tdata$percent_public_money = tdata$percent_public_money^4.33657277
+tdata$vehicles_per_thousand = tdata$vehicles_per_thousand^0.18553037
+
+#CREATE MODEL
+transit_model = lm(miles_per_capita ~ time_zone + density + expenses_per_capita +  
+                     rail + percent_public_money + vehicles_per_thousand, tdata)
+
+summary(transit_model)
+vif(transit_model)
+
+stepAIC(transit_model, direction = "backward")
+
+reduced_model = lm(miles_per_capita ~ density + percent_public_money + 
+                     expenses_per_capita, tdata)
+summary(reduced_model)
+
+reduced_model2 = lm(miles_per_capita ~ percent_public_money + 
+                     expenses_per_capita, tdata)
+summary(reduced_model2)
+par(mfrow=c(2,2))
+plot(reduced_model2)
